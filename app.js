@@ -17,13 +17,16 @@ sequelize.sync({ force: false }).then(() => {
 });
 
 
-app.get('/', async (req, res) => {
-  let refugiados = await Refugiado.findAll();
-  refugiados = refugiados.map((refugiado) => refugiados.dataValues);
-  
-  res.render('index', { refugiados });
-});
-
+app.get('/index', async (req, res) => {
+    try {
+      let refugiados = await Refugiado.findAll();
+      refugiados = refugiados.map((refugiado) => refugiado.dataValues); 
+      res.render('index', { refugiados });
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Erro ao buscar os refugiados.');
+    }
+  });
 app.get('/cadastro', (req, res) => {
   res.render('cadastro');
 });
@@ -31,7 +34,7 @@ app.get('/cadastro', (req, res) => {
 app.post('/cadastro', async (req, res) => {
   const { nome, id,email,senha } = req.body;
   await Refugiado.create({ nome, id,email,senha });
-  res.redirect('/');
+  res.redirect('/index');
 });
 
 app.get('/atualizar/:id', async (req, res) => {
@@ -44,16 +47,15 @@ app.get('/atualizar/:id', async (req, res) => {
 app.post('/atualizar/:id', async (req, res) => {
   const { nome, id,email,senha } = req.body;
   await Refugiado.update({ nome, id,email,senha }, { where: { id: req.params.id } });
-  res.redirect('/');
+  res.redirect('/index');
 });
 
 app.get('/delete/:id', async (req, res) => {
   await Refugiado.destroy({ where: { id: req.params.id } });
-  res.redirect('/');
+  res.redirect('/index');
 });
 
 // Iniciar o servidor
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
-
