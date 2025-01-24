@@ -1,13 +1,124 @@
-<h1>Adicionar Estudante</h1>
-<form action="/cadastro" method="POST">
-  <label for="nome">Nome:</label>
-  <input type="text" id="nome" name="nome" required>
-  <label for="id">Id:</label>
-  <input type="number" id="id" name="id" required>
-  <label for="email">Email:</label>
-  <input type="text" id="email" name="email" required>
-  <label for="senha">Senha:</label>
-  <input type="text" id="senha" name="senha" required>
-  <button type="submit">Salvar</button>
-</form>
-<a href="/">Voltar</a> 
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}} - Cadastrar</title>
+    <style>
+        body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #67bd9a;
+    background: linear-gradient(185deg, #13b0a5, #0071a7);
+}
+
+h1 { 
+    font-family: 'Playfair Display', serif; 
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #13b0a5;
+}
+.navbar .logo a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #f9f2a8;
+    display: flex;
+    align-items: center;
+}
+.navbar .logo img {
+    width: 60px; /* Ajuste o tamanho da imagem conforme necessário */
+    height: auto;
+    margin-right: 0.5rem; /* Espaço entre a imagem e o texto */
+}
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+.navbar .nav-links li a {
+    text-decoration: none;
+    color: #f9f2a8;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+.navbar .nav-links li a:hover {
+    background-color: #67bd9a;
+}
+.form-container { 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
+    margin-top: -80px; 
+}
+.form-section { 
+    background-color: #fff; 
+    padding: 31px; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    width: 400px; 
+}
+label { 
+    font-weight: bold; 
+    display: block; 
+    margin-top: 10px; 
+}
+input { 
+    width: 100%; 
+    padding: 10px; 
+    margin-top: 5px; 
+    margin-bottom: 15px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+}
+button { 
+    text-decoration: none;
+    width: 100%; 
+    padding: 10px; 
+    background-color: #67bd9a; 
+    color: #0071a7; 
+    border: none; 
+    border-radius: 5px; 
+    font-size: 16px; 
+    font-weight: bold;
+    cursor: pointer; 
+}
+button:hover { 
+    background-color: #13b0a5; 
+}
+    </style>
+</head>
+<body>
+    <header>
+        
+    </header>  
+    
+    <div class="form-container">
+        <div class="form-section">
+            <h5>Cadastro</h5>
+            <form action="/cadastro" method="POST">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
+                <label for="id">index:</label>
+                <input type="number" id="id" name="id" placeholder="Digite seu  id" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Digite seu email" required>
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" placeholder="Digite uma senha" required>
+                <button type="submit">Salvar</button>
+                <a href="/index">Voltar</a> 
+            </form>
+        </div>
+    </div>
+</body>
+</html>
