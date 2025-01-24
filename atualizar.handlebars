@@ -1,9 +1,14 @@
-<<h1>Editar Estudante</h1>
-<form action="/edit/{{estudante.id}}" method="POST">
+<<h1>Editar Conta</h1>
+<form action="/edit/{{refugiado.id}}" method="POST">
   <label for="nome">Nome:</label>
-  <input type="text" id="nome" name="nome" value="{{estudante.nome}}" required>
-  <label for="idade">Idade:</label>
-  <input type="number" id="idade" name="idade" value="{{estudante.idade}}" required>
+  <input type="text" id="nome" name="nome" value="{{refugiado.nome}}" required>
+  <label for="idade">Id:</label>
+  <input type="number" id="id" name="id" value="{{refugiado.id}}" required>
+  <label for="email">Email:</label>
+  <input type="text" id="email" name="email" value="{{refugiado.email}}" required>
+  <label for="senha">Senha:</label>
+  <input type="text" id="senha" name="senha" value="{{refugiado.senha}}" required>
   <button type="submit">Salvar</button>
+  
 </form>
-<a href="/">Voltar</a>
+<a href="/index">Voltar</a>
