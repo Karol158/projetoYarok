@@ -1,0 +1,25 @@
+<h1>Lista de Estudantes</h1>
+<a href="/cadastro">Adicionar Estudante</a>
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Id</th>
+      <th>Email</th>
+      <th>Senha</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    {{#each refugiados}}
+    <tr>
+      <td>{{this.nome}}</td>
+      <td>{{this.email}}</td>
+      <td>
+        <a href="/edit/{{this.id}}">Editar</a>
+        <a href="/delete/{{this.id}}" onclick="return confirm('Tem certeza?')">Excluir</a>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

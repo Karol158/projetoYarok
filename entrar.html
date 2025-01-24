@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livraria Online - Cadastrar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos Gerais */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #67bd9a;
+            background: linear-gradient(185deg, #13b0a5, #0071a7);
+        }
+    
+        h1 { 
+            font-family: 'Playfair Display', serif; 
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: #13b0a5;
+        }
+        .navbar .logo a {
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #f9f2a8;
+            display: flex;
+            align-items: center;
+        }
+        .navbar .logo img {
+            width: 60px; /* Ajuste o tamanho da imagem conforme necessário */
+            height: auto;
+            margin-right: 0.5rem; /* Espaço entre a imagem e o texto */
+        }
+        .navbar .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+        }
+        .navbar .nav-links li a {
+            text-decoration: none;
+            color: #f9f2a8;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .navbar .nav-links li a:hover {
+            background-color: #67bd9a;
+        }
+        .form-container { 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            margin-top: -80px; 
+        }
+        .form-section { 
+            background-color: #fff; 
+            padding: 31px; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+            width: 400px; 
+        }
+        label { 
+            font-weight: bold; 
+            display: block; 
+            margin-top: 10px; 
+        }
+        input { 
+            width: 100%; 
+            padding: 10px; 
+            margin-top: 5px; 
+            margin-bottom: 15px; 
+            border: 1px solid #ccc; 
+            border-radius: 5px; 
+        }
+        button { 
+            text-decoration: none;
+            width: 100%; 
+            padding: 10px; 
+            background-color: #67bd9a; 
+            color: #0071a7; 
+            border: none; 
+            border-radius: 5px; 
+            font-size: 16px; 
+            font-weight: bold;
+            cursor: pointer; 
+        }
+        button:hover { 
+            background-color: #13b0a5; 
+        }
+    </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#"><img src="abc.png" alt="Logo Ponte Yarok">Ponte Yarok</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#about">Sobre Nós</a></li>
+                <li><a href="#services">Serviços</a></li>
+                <li><a href="#events">Eventos</a></li>
+                <li><a href="#donations">Doações</a></li>
+                <li><a href="#login">Entrar</a></li>
+            </ul>
+        </nav>
+    </header>  
+    <div class="form-container">
+        <div class="form-section">
+            
+<h1>Entrar</h1>
+            <form method="POST" action="">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Digite seu email" required>
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" placeholder="Digite uma senha" required>
+                <button type="submit">Entrar</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

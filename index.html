@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ponte Yarok</title>
+    <style>
+        /* Estilos Gerais */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #f9f2a8;
+            background-color: #0071a7;
+        }
+    
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: #13b0a5;
+        }
+        .navbar .logo a {
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #f9f2a8;
+            display: flex;
+            align-items: center;
+        }
+        .navbar .logo img {
+            width: 60px; /* Ajuste o tamanho da imagem conforme necessário */
+            height: auto;
+            margin-right: 0.5rem; /* Espaço entre a imagem e o texto */
+        }
+        .navbar .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+        }
+        .navbar .nav-links li a {
+            text-decoration: none;
+            color: #f9f2a8;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .navbar .nav-links li a:hover {
+            background-color: #67bd9a;
+        }
+    
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 4rem 1rem;
+            background: linear-gradient(185deg, #13b0a5, #0071a7);
+        }
+        .hero-content {
+            color: #f9f2a8;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        .btn-primary {
+            text-decoration: none;
+            background-color: #b4d6a4;
+            color: #0071a7;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .btn-primary:hover {
+            background-color: #13b0a5;
+        }
+    
+        /* About Section */
+        .about {
+            padding: 2rem;
+            background-color: #faf6ce;
+            text-align: center;
+        }
+        .about h2 {
+            color: #0071a7;
+            margin-bottom: 1rem;
+        }
+        .about p {
+            color: #0071a7;
+            font-size: 20px;
+        }
+    
+        /* Services Section */
+        .services {
+        padding: 2rem;
+        background-color: #0071a7;
+        text-align: center;
+        }
+
+        .services h2 {
+            color: #b4d6a4;
+            margin-bottom: 2rem;
+        }
+
+        .service-cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .card {
+            background-color: #13b0a5;
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+            width: 200px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: inline-block;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border: none;
+            text-decoration: none;
+        }
+
+        .card h3 {
+            color: #b4d6a4;
+            margin: 1rem 0;
+        }
+
+        .card i {
+            font-size: 2rem;
+            color: #67bd9a;
+            margin-bottom: 1rem;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .card p {
+            color: white;
+        }
+
+        .card a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            height: 100%;
+        }
+
+        /* Events Section */
+        .events {
+            padding: 2rem;
+            background-color: #faf6ce;
+            text-align: center;
+        }
+        .events h2 {
+            color: #67bd9a;
+        }
+        .events p {
+            color: #67bd9a;
+            font-size: 20px;
+        }
+        .btn-secondary {
+            text-decoration: none;
+            background-color: #67bd9a;
+            color: #f9f2a8;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .btn-secondary:hover {
+            background-color: #13b0a5;
+        }
+    
+        /* Donations Section */
+        .donations {
+            padding: 2rem;
+            background-color: #0071a7;
+            text-align: center;
+        }
+        .donations h2 {
+            color: #67bd9a;
+        }
+    
+        /* Footer */
+        footer {
+            background-color: #13b0a5;
+            color: #f9f2a8;
+            padding: 1rem 2rem;
+            text-align: center;
+        }
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .footer-content p {
+            margin: 0.5rem 0;
+        }
+        .social-links {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .social-links li a {
+            text-decoration: none;
+            color: #b4d6a4;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        .social-links li a:hover {
+            color: #13b0a5;
+        }
+    </style>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#"><img src="abc.png" alt="Logo Ponte Yarok">Ponte Yarok</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#about">Sobre Nós</a></li>
+                <li><a href="#services">Serviços</a></li>
+                <li><a href="#events">Eventos</a></li>
+                <li><a href="#donations">Doações</a></li>
+                <li><a href="#login">Entrar</a></li>
+            </ul>
+        </nav>
+    </header>     
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Bem-vindo à Ponte Yarok</h1>
+                <p>Conectamos refugiados a serviços essenciais para construir novos começos.</p>
+                <a href="#services" class="btn-primary">Explorar Serviços</a>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <h2>Sobre Nós</h2>
+            <p>Nosso objetivo é facilitar a integração de refugiados por meio de conexões com abrigo, <br>
+                alimentação, empregos e muito mais. Trabalhamos em parceria com voluntários, ONGs e <br>
+                governos para oferecer suporte prático e cultural.</p>
+        </section>
+
+        <section id="services" class="services">
+            <h2>Serviços Oferecidos</h2>
+            <div class="service-cards">
+                <div class="card">
+                    <a href="#abrigos">
+                        <i class="fas fa-home"></i>
+                        <h3>Abrigos</h3>
+                        <p>Encontre abrigos seguros e confortáveis próximos a você.</p>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="#alimentacao">
+                        <i class="fas fa-utensils"></i>
+                        <h3>Alimentação</h3>
+                        <p>Descubra centros de distribuição de alimentos e refeições.</p>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="#empregos">
+                        <i class="fas fa-briefcase"></i>
+                        <h3>Empregos</h3>
+                        <p>Acesse vagas de trabalho e oportunidades de carreira.</p>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="#educacao">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        <h3>Educação</h3>
+                        <p>Participe de cursos e oficinas para desenvolver novas habilidades.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+
+        <section id="events" class="events">
+            <h2>Eventos Culturais</h2>
+            <p>Participe de eventos culturais e conheça mais sobre sua nova comunidade.</p>
+            <a href="#" class="btn-secondary">Ver Eventos</a>
+        </section>
+
+        <section id="donations" class="donations">
+            <h2>Faça uma Doação</h2>
+            <p>Ajude refugiados a recomeçar suas vidas com dignidade. Contribua com doações financeiras, alimentos ou roupas.</p>
+            <a href="#" class="btn-primary">Doar Agora</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Ponte Yorok. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
