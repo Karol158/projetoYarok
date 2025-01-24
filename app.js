@@ -37,18 +37,21 @@ app.post('/cadastro', async (req, res) => {
   res.redirect('/index');
 });
 
-app.get('/atualizar/:id', async (req, res) => {
+
+
+app.get('/edit/:id', async (req, res) => {
   let refugiado = await Refugiado.findByPk(req.params.id);
   refugiado = refugiado.dataValues;
-  
-  res.render('atualizar', { refugiado});
+  res.render('edit', { refugiado});
 });
 
-app.post('/atualizar/:id', async (req, res) => {
-  const { nome, id,email,senha } = req.body;
-  await Refugiado.update({ nome, id,email,senha }, { where: { id: req.params.id } });
-  res.redirect('/index');
+app.post('/edit/:id', async (req, res) => {
+  const { nome,email,senha } = req.body;
+  await Refugiado.update({ nome,email,senha },{ where: { id: req.params.id } });
+  res.redirect('index');
 });
+
+
 
 app.get('/delete/:id', async (req, res) => {
   await Refugiado.destroy({ where: { id: req.params.id } });
